@@ -11,7 +11,7 @@
         $(document).ready(() => {
             $("#button").click(() => {
                 var json = JSON.stringify({'operation': 'get_tables','b':2});
-                $.post("http://192.168.1.70:8080/", {
+                $.post("http://192.168.43.180:8086/", {
                     "data_json": json
                 }).done(function (string) {
                     let arr = JSON.parse(string);

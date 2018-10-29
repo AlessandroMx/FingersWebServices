@@ -49,10 +49,14 @@ if __name__ == '__main__':
             'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
             'cors.expose.on': True,
             'tools.response_headers.on': True,
-            'tools.response_headers.headers': [('Content-Type', 'text/plain'), ('Access-Control-Allow-Origin', '*')]
+            'tools.response_headers.headers': [
+                ('Content-Type', 'text/plain'), 
+                ('Access-Control-Allow-Origin', '*')
+            ]
         }
     }
-    cherrypy.config.update({'server.socket_host': '192.168.1.70'})
-    cherrypy.config.update({'server.socket_port': 8080})
+    cherrypy.config.update({'server.socket_host': 'localhost'})
+    # cherrypy.config.update({'server.socket_host': '192.168.43.180'})
+    cherrypy.config.update({'server.socket_port': 8086})
     cherrypy.response.headers["Access-Control-Allow-Origin"] = "*"
     cherrypy.quickstart(WebPageWebService(), '/', conf)
